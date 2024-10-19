@@ -1,27 +1,22 @@
-
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdlib.h>
 #include <math.h>
-
-bool prime(int n) {
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0) {
-            return false;
-        }
-    }
-    return true;
+int isprime(int a){
+    int i,isprime=1;
+       for(i=2;i<=sqrt(a);i++) {
+             if(a%i==0) 
+                return 0;
+             else
+                 return 1;   
+         }
 }
-
-int main() {
-    int a;
-    printf("enter number between 1 and 10^9: ");
-    scanf("%d", &a);
-    
-    if (prime(a)) {
-        printf("number is prime\n");
-    } else {
-        printf(" number is not prime\n");
-    }
-    
+int main(){
+    int n;
+    printf("enter number:");
+    scanf("%d",&n);
+     if(isprime(n)) 
+         printf("the number is prime");
+     else
+        printf("is not prime");    
     return 0;
 }
